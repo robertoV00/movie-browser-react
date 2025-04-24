@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GuardiansGalaxy from '../assets/guadiansGalaxy.jpg';
 
-const Movie = () => {
+const Movie = (movie) => {
     return (
         <div className="container movies-container">
                         <div className="row movies-row">

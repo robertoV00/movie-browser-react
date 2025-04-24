@@ -43,7 +43,7 @@ const SearchPage = () => {
                 <div className="row movies-items-row">
                     <div className="movies-list">
                         {
-                            movies.slice(0, 8).map((movie) => <Movie />)
+                            movies.slice(0, 6).map((movie) => <Movie />)
                             // <div className="empty-list-image">
                             //     <img src={EmptyListImg} alt="" className='movie_empty_img' />
                             //     <h2 className='empty-list-subtitle'>Waiting for your search...</h2>
