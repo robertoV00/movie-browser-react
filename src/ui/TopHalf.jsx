@@ -6,9 +6,6 @@ import { useNavigate } from "react-router-dom";
 const TopHalf = () => {
 
   const searchInput = document.querySelector(".search-bar");
-  const [movies, setMovies] = useState([])
-  // https://www.omdbapi.com/?apikey=34328269&s=${query}
-
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
 
@@ -71,6 +68,8 @@ const TopHalf = () => {
                 placeholder="Find a movie"
                 className="search-bar"
                 type="text"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
                 onKeyDown={handleKeyPress}
               />
               <i className="fa-solid fa-magnifying-glass icon-search-bar magnifying-glass"></i>

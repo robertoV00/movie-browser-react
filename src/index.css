@@ -213,6 +213,11 @@ span {
     display: block;
 }
 
+.movies-items-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .movies-row {
     display: flex;
     flex-direction: column;
