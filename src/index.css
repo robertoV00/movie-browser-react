@@ -213,6 +213,10 @@ span {
     display: block;
 }
 
+.movies-container {
+    padding-top: 20px;
+}
+
 .movies-items-container {
     display: flex;
     flex-direction: row;
@@ -369,6 +373,84 @@ span {
     }
 }
 /* BOTTOM HALF */
+
+/* DESCRIPTION PAGE CSS */
+
+.master-container {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+
+.description {
+    color: white;
+}
+
+.top-container {
+    display: flex;
+    
+}
+
+.description-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    padding-left: 70px;
+    width: 80%
+}
+
+.movie-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.description-movie-title {
+    font-size: 54px;
+}
+
+.description-information {
+    font-weight: 300;
+}
+
+.overview-title {
+    margin-top: 20px;
+}
+
+.description-overview {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.description-watch-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 150px;
+    background-color: crimson;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.play-button {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+
+.description-bottom-container {
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.bottom-container-title {
+    margin-bottom: 0px;
+}
+/* DESCRIPTION PAGE CSS */
+
+
 
 /* UPPER HALF RESPONSIVENESS */
 @media (max-width: 640px) {
@@ -544,7 +626,116 @@ span {
 }
 
 
+/* SIDEBAR DESINGING */
+.sidebar-container {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #1a1a1a;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
 
+/* Add styles for sidebar content */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 20px;
+}
+
+
+.sidebar-link {
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-title {
+    font-weight: 300;
+    color: grey;
+    margin-bottom: 24px;
+}
+
+.sidebar-list {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.sidebar-item {
+    transition: 200ms ease;
+    color: rgb(146, 146, 146);
+    display: flex
+}
+
+.sidebar-icon {
+    color: rgb(146, 146, 146) !important;
+    margin-right: 30px;
+    transition: 200ms ease;
+}
+
+
+.sidebar-item:clicked .sidebar-icon {
+    color: crimson;
+}
+
+.sidebar-item:hover {
+    color: white
+}
+/* Adjust main content to account for sidebar */
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .sidebar-container {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar-container.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+/* SIDEBAR DESINGING */
 
 
 

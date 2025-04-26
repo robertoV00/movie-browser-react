@@ -14,9 +14,6 @@ const BottomHalf = () => {
             <section id="bottom-half">
             <div className="container movies-container">
                 <div className="row movies-row">
-                    <div className="movies-top">
-                        <h2 className="bottom-header">Search results for: <span className="movie-title-display"></span></h2>
-                    </div>
                     <div className="movie-selection-wrapper" id="movies-list">
                         <div className="movie-box">
                             <figure className="movie-image-wrapper">

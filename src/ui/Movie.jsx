@@ -22,7 +22,7 @@ const Movie = ({movie}) => {
                                             <div className="info-container">
                                                 <h4 className="hover-title">{movie.Title}</h4>
                                                 <div className="find-more-btn-container">
-                                                <Link to="/movie/guardians" className='find-more-btn'>Find Out More</Link>
+                                                <Link to={`/movie/${movie.imdbID}`} className='find-more-btn'>Find Out More</Link>
                                                 </div>
                                             </div>
                                         </div>
