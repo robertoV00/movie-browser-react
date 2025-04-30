@@ -20,35 +20,6 @@ const TopHalf = () => {
     <>
       <section id="top-half">
         <figure className="movie-background-wrapper">
-          {/* <nav class="navbar">
-            <div class="left-side">
-              <div class="movie-logo-wrapper">
-                <img class="movie-logo" src="/assets/movielogo.png" alt="" />
-              </div>
-              <a href="#home" class="nav-link">
-                Home
-              </a>
-              <a href="#home" class="nav-link">
-                Contact
-              </a>
-            </div>
-            <div class="right-side">
-              <div class="search-icon-wrapper" onclick="activateSearch()">
-                <input
-                  type="text"
-                  class="nav-input"
-                  placeholder="Find a movie"
-                />
-                <i
-                  class="fa-solid fa-magnifying-glass nav-glass icon-navbar"
-                  onclick="activateSearch()"
-                ></i>
-              </div>
-              <div class="settings-icon-wrapper">
-                <i class="fa-solid fa-gear icon-navbar"></i>
-              </div>
-            </div>
-          </nav> */}
           <img
             className="movie-background"
             src={MovieBackground}

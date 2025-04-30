@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import GuardiansGalaxy from "../assets/guadiansGalaxy.jpg"
 import Avengers from "../assets/avengers.jpg"
 import SpidermanHomecoming from "../assets/homecoming.jpg"
@@ -9,6 +10,32 @@ import { Link } from 'react-router-dom';
 
 
 const BottomHalf = () => {
+
+    const { id } = useParams();
+    const [movie, setMovie] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    async function fetchMovieDetails() {
+        try {
+            const { data } = await axios.get(`https://www.omdbapi.com/?apikey=34328269&i=${id}`);
+            setMovie(data);
+        } catch (error) {
+            console.error('Error fetching movie details:', error);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        if (id) {
+            fetchMovieDetails();
+        }
+    }, [id]);
+
+    useEffect(() => {
+        console.log(movie);
+    }, [movie])
+
     return (
         <>
             <section id="bottom-half">
@@ -22,7 +49,7 @@ const BottomHalf = () => {
                                     <div className="info-container">
                                         <h4 className="hover-title">Guardians of The Galaxy Vol. 2</h4>
                                         <div className="find-more-btn-container">
-                                        <Link to="/movie/guardians" className='find-more-btn'>Find Out More</Link>
+                                        <Link to="/movie/tt3896198" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -36,7 +63,7 @@ const BottomHalf = () => {
                                     <div className="info-container">
                                         <h4 className="hover-title">The Avengers</h4>
                                         <div className="find-more-btn-container">
-                                            <button className='find-more-btn'>Find Out More</button>
+                                            <Link to="/movie/tt0848228" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +78,7 @@ const BottomHalf = () => {
                                     <div className="info-container">
                                         <h4 className="hover-title">Spider-man: Homecoming</h4>
                                         <div className="find-more-btn-container">
-                                            <button className='find-more-btn'>Find Out More</button>
+                                            <Link to="/movie/tt2250912" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +93,7 @@ const BottomHalf = () => {
                                     <div className="info-container">
                                         <h4 className="hover-title">Minions: Rise of Gru</h4>
                                         <div className="find-more-btn-container">
-                                            <button className='find-more-btn'>Find Out More</button>
+                                            <Link to="/movie/tt5113044" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +108,7 @@ const BottomHalf = () => {
                                     <div className="info-container verse-info-links">
                                         <h4 className="hover-title verse-title">Spider-Man: Into the Spider-Verse</h4>
                                         <div className="find-more-btn-container">
-                                            <button className='find-more-btn'>Find Out More</button>
+                                            <Link to="/movie/tt4633694" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +123,7 @@ const BottomHalf = () => {
                                     <div className="info-container nope-info-links">
                                         <h4 className="hover-title nope-title">Nope</h4>
                                         <div className="find-more-btn-container">
-                                            <button className='find-more-btn'>Find Out More</button>
+                                            <Link to="/movie/tt10954984" className='find-more-btn'>Find Out More</Link>
                                         </div>
                                     </div>
                                 </div>

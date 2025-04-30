@@ -26,7 +26,7 @@ span {
 }
 
 .row {
-    margin: 0 40px;
+    margin: 0 5px;
 }
 /* Global Styles */
 
@@ -222,6 +222,10 @@ span {
     flex-direction: row;
 }
 
+.movies-items-row {
+    margin: 0;
+}
+
 .movies-row {
     display: flex;
     flex-direction: column;
@@ -307,13 +311,19 @@ span {
     justify-content: space-between;
 }
 
+.find-more-btn-container {
+    width: 100%;
+}
+
 .find-more-btn {
+    text-align: center;
     border: 1px solid crimson;
     background-color: crimson;
     border-radius: 100px;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 200;
+    display: block;
     width: 100%;
     position: relative;
     top: 140px;
@@ -419,7 +429,7 @@ span {
 }
 
 .description-overview {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -607,12 +617,36 @@ span {
     font-size: 24px;
 }
 
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    color: crimson;
+    font-size: 48px;
+}
+
+.fa-spin {
+    animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .empty-list-image {
     display: flex;
     position: relative;
     top: 100px;
     flex-direction: column;
     align-items: center;
+    transform: translateX(100%);
 }
 
 .movie_empty_img {
@@ -623,6 +657,11 @@ span {
 .empty-list-subtitle {
     font-size: 36px;
     font-weight: 300;
+}
+
+.searchpage-movies-list {
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -640,8 +679,16 @@ span {
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    
 }
 
+:root {
+    --icon-color: #4d4d4d;
+}
+
+.sidebar-container .sidebar-item .sidebar-icon {
+    color: crimson;
+}
 /* Add styles for sidebar content */
 .sidebar-nav {
     display: flex;
@@ -654,6 +701,11 @@ span {
     flex-direction: column;
     gap: 32px;
     margin-bottom: 20px;
+}
+
+.sidebar-settings,
+.sidebar-help {
+    cursor: not-allowed
 }
 
 
@@ -692,25 +744,49 @@ span {
     font-weight: 300;
 }
 
+.sidebar-home {
+    color: red;
+}
+
 .sidebar-item {
     transition: 200ms ease;
     color: rgb(146, 146, 146);
-    display: flex
+    display: flex;
+    border-right: 3px solid transparent;
+    
 }
 
 .sidebar-icon {
-    color: rgb(146, 146, 146) !important;
-    margin-right: 30px;
+    color: rgb(146, 146, 146);
+    margin-right:25px;
     transition: 200ms ease;
+    height: 28px;
+
 }
 
 
-.sidebar-item:clicked .sidebar-icon {
-    color: crimson;
-}
 
+.sidebar-item:hover .sidebar-icon,
 .sidebar-item:hover {
-    color: white
+    color: white;
+    fill: white;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+/* Active state styles */
+.sidebar-item.active {
+    border-right: 5px solid crimson;
+}
+
+.sidebar-item.active .sidebar-icon {
+    color: crimson;
+    fill: crimson;
+}
+
+.sidebar-item.active:hover .sidebar-icon {
+    color: crimson;
+    fill: crimson;
+    filter: drop-shadow(0 0 5px rgba(220, 20, 60, 0.5));
 }
 /* Adjust main content to account for sidebar */
 .main-content {
@@ -737,7 +813,20 @@ span {
 }
 /* SIDEBAR DESINGING */
 
+/* DYNAMIC MOVIE CSS */
 
+.dynamic-movies-container {
+    scale: 0.9;
+    transform: translateX(50%);
+    
+}
+
+.dynamic-movies-row {
+    display: flex;
+    
+}
+
+/* DYNAMIC MOVIE CSS */
 
 
 

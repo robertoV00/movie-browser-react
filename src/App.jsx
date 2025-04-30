@@ -13,13 +13,13 @@ const App = ({movie}) => {
     <>
       <Router>
         <Sidebar />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/movies' element={<SearchPage />} />
-          <Route path='/movie-test' element={<Movie />} />
-          <Route path="/movie/:id" element={<DescriptionPage />} />
-          {/* change the id at the end of this url ^ */}
-        </Routes>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/movies' element={<SearchPage />} />
+            <Route path='/movie-test' element={<Movie />} />
+            <Route path="/movie/:id" element={<DescriptionPage />} />
+            {/* change the id at the end of this url ^ */}
+          </Routes>
       </Router>
     </>
   )
