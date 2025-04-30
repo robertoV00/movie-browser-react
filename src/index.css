@@ -622,9 +622,11 @@ span {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 200px;
+    height: 70px;
     color: crimson;
     font-size: 48px;
+    position: relative;
+    top: 200px;
 }
 
 .fa-spin {
@@ -642,21 +644,46 @@ span {
 
 .empty-list-image {
     display: flex;
-    position: relative;
-    top: 100px;
     flex-direction: column;
     align-items: center;
-    transform: translateX(100%);
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
 }
 
 .movie_empty_img {
-    height: 440px;
-    margin-bottom: 30px;
+    max-width: 100%;
+    height: auto;
+    scale: 1.40;
+    width: 300px; /* Set a default width */
+    margin: 30px auto;
+    transform: translateY(30%);
 }
 
 .empty-list-subtitle {
-    font-size: 36px;
-    font-weight: 300;
+    position: relative;
+    top: 150px;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movie_empty_img {
+        width: 250px; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie_empty_img {
+        width: 200px; /* Even smaller on mobile */
+    }
+    
+    .empty-list-subtitle {
+        font-size: 1rem;
+    }
 }
 
 .searchpage-movies-list {
@@ -686,9 +713,6 @@ span {
     --icon-color: #4d4d4d;
 }
 
-.sidebar-container .sidebar-item .sidebar-icon {
-    color: crimson;
-}
 /* Add styles for sidebar content */
 .sidebar-nav {
     display: flex;
@@ -744,10 +768,6 @@ span {
     font-weight: 300;
 }
 
-.sidebar-home {
-    color: red;
-}
-
 .sidebar-item {
     transition: 200ms ease;
     color: rgb(146, 146, 146);
@@ -764,10 +784,13 @@ span {
 
 }
 
-
+.sidebar-text {
+    color: grey;
+}
 
 .sidebar-item:hover .sidebar-icon,
-.sidebar-item:hover {
+.sidebar-item:hover,
+.sidebar-item:hover .sidebar-text {
     color: white;
     fill: white;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
@@ -797,10 +820,6 @@ span {
 
 /* Media query for responsive design */
 @media (max-width: 768px) {
-    .sidebar-container {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
 
     .sidebar-container.active {
         transform: translateX(0);
@@ -810,6 +829,44 @@ span {
         margin-left: 0;
         width: 100%;
     }
+}
+
+@media(max-width: 767px) {
+    .sidebar-container {
+        width: 100px; /* Reduce sidebar width */
+        padding-left: 20px; /* Reduce padding */
+        transform: translateX(0); /* Remove the negative transform */
+        transition: width 0.3s ease;
+    }
+
+    .main-content {
+        margin-left: 100px; /* Match the new sidebar width */
+        width: calc(100% - 100px); /* Adjust content width */
+    }
+
+    .sidebar-text {
+        display: none;
+    }
+
+    .sidebar-icon {
+        position: relative;
+        left: 0; /* Reset the left position */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .sidebar-item {
+        justify-content: center; /* Center the icons */
+    }
+
+    .sidebar-title {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .sidebar-item.active {
+        border: none; /* Make border thinner on mobile */
+    }
+    
 }
 /* SIDEBAR DESINGING */
 
