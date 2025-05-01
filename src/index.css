@@ -223,7 +223,9 @@ span {
 }
 
 .movies-items-row {
-    margin: 0;
+    display: flex;
+    justify-content: center;
+
 }
 
 .movies-row {
@@ -574,12 +576,19 @@ span {
 
 .banner-container {
     height: 110px;
-    margin: 0 auto;
-    padding: 0 10px;
-    padding-left: 30px;
+    width: 100%;
+    padding: 0 30px;
     background-color: crimson;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Add this */
+}
+
+.search-box-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto; /* Add this */
+    padding-right: 20px; /* Add this for some spacing from the right edge */
 }
 
 .search-movie-banner-title {
@@ -590,12 +599,6 @@ span {
     margin: 0;
 }
 
-.search-box-container {
-    width: 100%;
-    border-radius: 8px;
-    display: flex;
-    justify-content: end;
-}
 
 .search-button {
     background: transparent;
@@ -688,6 +691,7 @@ span {
 
 .searchpage-movies-list {
     display: flex;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -793,7 +797,7 @@ span {
 .sidebar-item:hover .sidebar-text {
     color: white;
     fill: white;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
 /* Active state styles */
@@ -829,9 +833,24 @@ span {
         margin-left: 0;
         width: 100%;
     }
+
+    .banner-container {
+        margin: 0;
+        padding: 0 15px;
+        height: 90px;
+    }
+
+    .search-box-container {
+        padding-right: 10px;
+    }
+
+    .search-button {
+        height: 60px;
+        min-width: 10rem; /* Reduce minimum width on mobile */
+    }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 950px) {
     .sidebar-container {
         width: 100px; /* Reduce sidebar width */
         padding-left: 20px; /* Reduce padding */
@@ -873,15 +892,34 @@ span {
 /* DYNAMIC MOVIE CSS */
 
 .dynamic-movies-container {
-    scale: 0.9;
-    transform: translateX(50%);
-    
+    width: 300px;
+    margin: 0 auto;
+    transform: none;
 }
 
 .dynamic-movies-row {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dynamic-movie-box {
+    width: 230px;
+    height: 100%;
+}
+
+.searchpage-movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
     
 }
+
+.movie-image-wrapper {
+    width: 100%;
+    margin: 0;
+}
+
 
 /* DYNAMIC MOVIE CSS */
 
