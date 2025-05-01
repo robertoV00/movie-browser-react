@@ -892,7 +892,7 @@ span {
 /* DYNAMIC MOVIE CSS */
 
 .dynamic-movies-container {
-    width: 300px;
+    width: 260px;
     margin: 0 auto;
     transform: none;
 }
@@ -922,8 +922,24 @@ span {
 
 
 /* DYNAMIC MOVIE CSS */
+@media (max-width: 1024px) {
+    .image-box-container {
+        height: 370px;
+        width: 300px;
+    }
+}
 
+@media (max-width: 775px) {
+    .top-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .image-box-container {
+        height: 480px;
+        width: 350px;
+    }
+}
 
 
 
